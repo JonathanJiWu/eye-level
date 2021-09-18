@@ -6,10 +6,14 @@ import MovieList from "./components/MovieList";
 import SearchBox from "./components/SearchBox";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { Typography } from '@mui/material'
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+  },
+  input:{
+    color:'white'
   },
   paper: {
     padding: theme.spacing(2),
@@ -26,9 +30,9 @@ const theme = createMuiTheme({
 
   palette: {
     type:'dark',
-    // background:{
-    //   default:'#d2dae2'
-    // },
+    background:{
+      default:'#d2dae2'
+    },
     primary: {
       // light: will be calculated from palette.primary.main,
       main: "#1e272e",
@@ -71,6 +75,7 @@ export default function CenteredGrid() {
 
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <div className={classes.root}>
         <PrimarySearchAppBar />
         <Grid container spacing={3}>
@@ -82,7 +87,7 @@ export default function CenteredGrid() {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid item xs={12} >
             <MovieList movies={movies} />
           </Grid>
         </Grid>

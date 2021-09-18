@@ -20,17 +20,12 @@ const MovieList = (props) => {
         {props.movies.map((movie, index) => (
           <Grid item xs={12} sm={6} md={3} lg={2}>
             <Card color="Secondary" width={350}>
-              <CardHeader
-                action={
-                  <IconButton aria-label="add">
-                    {/* onClick={handleAddFavList} */}
-                    <AddIcon />
-                  </IconButton>
-                }
-              />
+
+
+              
               <CardMedia
                 component="img"
-                height="550"
+                // height="550"
                 image={movie.Poster}
                 alt={movie.Title}
               />
@@ -51,4 +46,12 @@ const MovieList = (props) => {
   );
 };
 
+// {/* <CardHeader
+// action={
+//   <IconButton aria-label="add">
+//     {/* onClick={handleAddFavList} */}
+//     <AddIcon />
+//   </IconButton>
+// }
+// /> */}
 export default MovieList;

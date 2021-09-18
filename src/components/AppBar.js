@@ -14,6 +14,7 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import ComboBox from "./SearchMovieAutoComplete";
 import MovieFilterOutlinedIcon from "@mui/icons-material/MovieFilterOutlined";
 import APICall from "./APICall";
+import ListAltOutlinedIcon from '@mui/icons-material/ListAltOutlined';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -176,7 +177,7 @@ export default function PrimarySearchAppBar(props) {
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={0} color="secondary">
-                <MailIcon />
+                <ListAltOutlinedIcon />
               </Badge>
             </IconButton>
             <IconButton aria-label="show 17 new notifications" color="inherit">
