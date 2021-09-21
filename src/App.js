@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from "react";
+import { Switch, Route } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import PrimarySearchAppBar from "./components/AppBar";
 import MovieList from "./components/MovieList";
 import SearchBox from "./components/SearchBox";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import { Typography } from '@mui/material'
+import { Typography } from "@mui/material";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import PersonalWatchList from './pages/PersonalWatchList'
+import UserProfile from "./pages/UserProfile";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  input:{
-    color:'white'
+  input: {
+    color: "white",
   },
   paper: {
     padding: theme.spacing(2),
@@ -22,16 +25,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const theme = createMuiTheme({
-  typography:{
-    fontFamily:'space+Mono',
-    fontWeightLight:400,
-    fontWeightBold:700,
+  typography: {
+    fontFamily: "space+Mono",
+    fontWeightLight: 400,
+    fontWeightBold: 700,
   },
 
   palette: {
-    type:'dark',
-    background:{
-      default:'#d2dae2'
+    type: "dark",
+    background: {
+      default: "#d2dae2",
     },
     primary: {
       // light: will be calculated from palette.primary.main,
@@ -42,7 +45,7 @@ const theme = createMuiTheme({
     secondary: {
       light: "#34e7e4",
       main: "#00d8d6",
-      dark: '#4bcffa',
+      dark: "#4bcffa",
       contrastText: "#0fbcf9",
     },
     // Used by `getContrastText()` to maximize the contrast between
@@ -87,9 +90,20 @@ export default function CenteredGrid() {
             />
           </Grid>
 
-          <Grid item xs={12} >
+          <Grid item xs={12}>
             <MovieList movies={movies} />
           </Grid>
+
+          <switch>
+            <Route exact path="/personalwatchlist">
+              <PersonalWatchList/>
+            </Route>
+
+            <Route exact path="/userprofile">
+              <UserProfile />
+            </Route>
+          </switch>
+          
         </Grid>
       </div>
     </ThemeProvider>

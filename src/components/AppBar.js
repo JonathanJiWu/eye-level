@@ -14,7 +14,9 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import ComboBox from "./SearchMovieAutoComplete";
 import MovieFilterOutlinedIcon from "@mui/icons-material/MovieFilterOutlined";
 import APICall from "./APICall";
-import ListAltOutlinedIcon from '@mui/icons-material/ListAltOutlined';
+import ListAltOutlinedIcon from "@mui/icons-material/ListAltOutlined";
+import { Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -162,11 +164,13 @@ export default function PrimarySearchAppBar(props) {
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
+            component={Link}
+            to="/"
           >
             <MovieFilterOutlinedIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-          eye level
+            eye level
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}></div>
@@ -175,7 +179,12 @@ export default function PrimarySearchAppBar(props) {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
+            <IconButton
+              aria-label="show 4 new mails"
+              color="inherit"
+              component={Link}
+              to="/personalwatchlist"
+            >
               <Badge badgeContent={0} color="secondary">
                 <ListAltOutlinedIcon />
               </Badge>
@@ -190,8 +199,10 @@ export default function PrimarySearchAppBar(props) {
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
+              // onClick={handleProfileMenuOpen}
               color="inherit"
+              component={Link}
+              to="/userprofile"
             >
               <AccountCircle />
             </IconButton>
