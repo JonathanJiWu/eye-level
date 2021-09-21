@@ -4,6 +4,33 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
+import { createStore } from "redux";
+import { Store } from "@mui/icons-material";
+
+// REDUX STORE-> globalized state
+// ACTION
+// const addToWatchList = () => {
+//   return {
+//     type: "ADD",
+//   };
+// };
+// const removeForWatchList = () => {
+//   return {
+//     type: "REMOVE",
+//   };
+// };
+// REDUCER
+// const counter = (state = 0, action) => {
+//   switch (action.type) {
+//     case "ADD":
+//       return state.change;
+//     case "REMOVE":
+//       return state.change;
+//   }
+// };
+// let store =createStore(counter)
+// DISPATCH
+// Store.dispatch(addToWatchList())
 
 ReactDOM.render(
   <React.StrictMode>
